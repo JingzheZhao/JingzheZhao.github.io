@@ -1,4 +1,4 @@
-Jingzhe_Personal_Web/node_modules/
-Jingzhe_Personal_Web/dist/
-Jingzhe_Personal_Web/build/
+node_modules/
+dist/
+build/
 **/.cache/
