@@ -148,11 +148,11 @@ const About = () => {
           whileInView={'show'}
           viewport={{ once: false, amount: 0.2 }}
         >
-          <h2 className='h2 text-accent mb-16 text-center lg:text-left lg:pl-20'>Education & Experience</h2>
+          <h2 className='h2 text-accent mb-16 text-center mx-auto'>Education & Experience</h2>
         </motion.div>
 
         <div className='relative max-w-5xl mx-auto'>
-          {/* Timeline line - Left side */}
+        {/* Timeline line - Left side */}
           <div className='absolute left-0 lg:left-20 top-0 bottom-0 w-0.5 bg-gradient-to-b from-accent-cyan via-accent-purple to-accent-teal'></div>
 
           {/* Timeline items */}
