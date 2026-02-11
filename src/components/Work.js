@@ -18,7 +18,7 @@ const Work = () => {
       description: 'ML-powered platform that reduces urban-scale environment analysis from minutes to milliseconds.',
       image: '/assets/portfolio-img1.png', // Replace with your screenshots
       youtubeUrl: 'https://youtu.be/3uCVHuaowtU',
-      githubUrl: 'https://github.com/JingzheZhao/InstantSim.git',
+      githubUrl: 'https://github.com/your-repo-1',
       tags: ['PyTorch', 'FastAPI', 'Three.js', 'Docker'],
       color: '#00e5ff' // Cyan
     },
@@ -43,6 +43,17 @@ const Work = () => {
       githubUrl: 'https://github.com/your-repo-3',
       tags: ['C#', 'Unity', 'Fuzzy Logic', 'Vehicle Physics'],
       color: '#00ffc8' // Teal
+    },
+    {
+      id: 4,
+      title: 'Personal Site',
+      subtitle: 'Modern Web Development',
+      description: 'Custom-built portfolio website featuring interactive 3D tech stack visualization. Built with React, Three.js, and Tailwind CSS.',
+      image: '../assets/portfolio-img4.png',
+      youtubeUrl: 'https://youtu.be/9Ylfl-UTo6A',
+      githubUrl: 'https://github.com/JingzheZhao/JingzheZhao.github.io.git',
+      tags: ['React', 'Three.js', 'Framer Motion', 'Tailwind CSS'],
+      color: '#ff6b9d' // Teal
     }
   ];
 
