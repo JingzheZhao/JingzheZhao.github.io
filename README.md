@@ -1,146 +1,154 @@
-# 🚀 个人作品集网站
+# Personal Portfolio Website
 
-一个现代化、响应式的个人作品集网站，使用 React、Tailwind CSS 和 Framer Motion 构建。
+A modern, responsive personal portfolio website built with React, Tailwind CSS, and Framer Motion, featuring interactive 3D tech stack visualization.
 
-## ✨ 特性
+## Features
 
-- 🎨 现代化设计，带有渐变色和动画效果
-- 📱 完全响应式布局
-- ⚡ 使用 Framer Motion 的流畅动画
-- 🎯 平滑滚动导航
-- 💼 作品展示部分
-- 📝 联系表单
-- 🔢 数字统计动画
+- Modern design with gradients and smooth animations
+- Fully responsive layout
+- Smooth animations powered by Framer Motion
+- Interactive 3D tech stack sphere with Three.js
+- Smooth scroll navigation
+- Project showcase with carousel
+- Contact form
+- Animated statistics counter
 
-## 🛠️ 技术栈
+## Tech Stack
 
-- **React** - UI 框架
-- **Tailwind CSS** - 样式框架
-- **Framer Motion** - 动画库
-- **React Icons** - 图标库
-- **React Type Animation** - 打字动画效果
-- **React CountUp** - 数字滚动动画
-- **React Scroll** - 平滑滚动
+- **React** - UI framework
+- **Three.js** - 3D graphics and interactive sphere
+- **Tailwind CSS** - Styling framework
+- **Framer Motion** - Animation library
+- **React Icons** - Icon library
+- **React Type Animation** - Typing animation effect
+- **React CountUp** - Number scrolling animation
+- **React Scroll** - Smooth scrolling
 
-## 📦 安装
+## Installation
 
-1. 克隆仓库
+1. Clone the repository
 ```bash
 git clone <your-repo-url>
 cd portfolio-website
 ```
 
-2. 安装依赖
+2. Install dependencies
 ```bash
 npm install
 ```
 
-3. 启动开发服务器
+3. Start the development server
 ```bash
 npm start
 ```
 
-4. 在浏览器中打开 [http://localhost:3000](http://localhost:3000)
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-## 📁 项目结构
+## Project Structure
 
 ```
 src/
-├── assets/          # 图片和静态资源
-├── components/      # React 组件
+├── assets/          # Images and static resources
+├── components/      # React components
 │   ├── About.js
 │   ├── Banner.js
 │   ├── Contact.js
 │   ├── Header.js
 │   ├── Nav.js
-│   ├── Services.js
-│   └── Work.js
+│   ├── Work.js
+│   └── TechStack.js
 ├── App.js
 ├── index.css
 ├── index.js
-└── variants.js      # Framer Motion 动画变体
+└── variants.js      # Framer Motion animation variants
 ```
 
-## 🎨 自定义
+## Customization
 
-### 修改个人信息
+### Update Personal Information
 
-在 `Banner.js` 中更新你的名字和职业：
+In `Banner.js`, update your name and roles:
 ```javascript
-<h1>你的名字</h1>
+<h1>Your Name</h1>
 <TypeAnimation 
   sequence={[
-    '你的职业1',
+    'Your Role 1',
     2000,
-    '你的职业2',
+    'Your Role 2',
     2000,
   ]}
 />
 ```
 
-### 修改服务内容
+### Modify Projects
 
-在 `Services.js` 中更新服务列表：
+Update project information in `Work.js`:
 ```javascript
-const services = [
+const projects = [
   {
-    name: '服务名称',
-    description: '服务描述',
-    link: 'Learn more',
+    id: 1,
+    title: 'Project Title',
+    subtitle: 'Project Subtitle',
+    description: 'Project description',
+    // ...
   },
-  // 添加更多服务...
 ];
 ```
 
-### 修改作品展示
+### Color Theme
 
-在 `Work.js` 中替换作品图片和信息。
-
-### 颜色主题
-
-在 `tailwind.config.js` 中修改主题色：
+Modify theme colors in `tailwind.config.js`:
 ```javascript
 colors: {
   primary: '#0a0a0a',
-  accent: '#B809C3',  // 修改强调色
+  accent: '#B809C3',  // Change accent color
 },
 ```
 
-## 📝 所需资源
+### 3D Tech Stack Sphere
 
-确保在 `src/assets/` 文件夹中准备以下资源：
-- `avatar.svg` - 你的头像
-- `logo.svg` - 网站 Logo
-- `site-bg.jpg` - 背景图片
-- `about.png` - About 部分背景
-- `services.png` - Services 部分背景
-- `portfolio-img1.png` - 作品图片 1
-- `portfolio-img2.png` - 作品图片 2
-- `portfolio-img3.png` - 作品图片 3
+Customize technologies in `TechStack.js`:
+```javascript
+const technologies = [
+  { name: 'React', position: [x, y, z] },
+  // Add more technologies...
+];
+```
 
-## 🚀 部署
+## Required Assets
 
-### 构建生产版本
+Prepare the following assets in the `src/assets/` folder:
+- `avatar.svg` - Your avatar
+- `logo.svg` - Website logo
+- `site-bg.jpg` - Background image
+- `about.png` - About section background
+- `portfolio-img1.png` - Project image 1
+- `portfolio-img2.png` - Project image 2
+- `portfolio-img3.png` - Project image 3
+
+## Deployment
+
+### Build for Production
 ```bash
 npm run build
 ```
 
-### 部署到 Vercel
-1. 安装 Vercel CLI: `npm i -g vercel`
-2. 运行: `vercel`
+### Deploy to Vercel
+1. Install Vercel CLI: `npm i -g vercel`
+2. Run: `vercel`
 
-### 部署到 Netlify
-1. 运行 `npm run build`
-2. 将 `build` 文件夹拖到 Netlify
+### Deploy to Netlify
+1. Run `npm run build`
+2. Drag the `build` folder to Netlify
 
-## 📄 License
+## License
 
-MIT License - 随意使用和修改！
+MIT License - Feel free to use and modify!
 
-## 🤝 贡献
+## Contributing
 
-欢迎提交 Pull Requests！
+Pull requests are welcome!
 
 ---
 
-用 ❤️ 和 React 制作
+Built with React and Three.js
