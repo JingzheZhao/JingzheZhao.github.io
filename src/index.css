@@ -138,10 +138,11 @@ a.pc:hover .arrow { background: var(--y); }
 
 /* contact */
 .end { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; margin-top: 88px; }
-.end .tile { min-height: 250px; }
+.end .tile { min-height: 250px; display: flex; flex-direction: column; }
 .end h2 { margin: 10px 0 22px; font-size: 52px; line-height: 1.02; font-weight: 800; letter-spacing: -.03em; }
-.links { display: flex; flex-direction: column; gap: 10px; margin-top: 16px; }
-.links a { display: flex; justify-content: space-between; align-items: center; padding: 14px 18px; border: 2px solid var(--ink); border-radius: 16px; font-weight: 600; background: #fff; }
+.links { display: flex; flex-direction: column; gap: 12px; margin-top: 16px; flex: 1; }
+.links a { flex: 1; display: flex; justify-content: space-between; align-items: center; padding: 14px 22px; border: 2px solid var(--ink); border-radius: 16px; font-weight: 800; font-size: 20px; background: #fff; box-shadow: 3px 3px 0 var(--ink); transition: transform .15s, box-shadow .15s; }
+.links a:hover { transform: translate(-2px, -2px); box-shadow: 5px 5px 0 var(--ink); }
 .links a:hover { background: var(--y); }
 footer { display: flex; justify-content: space-between; margin-top: 40px; font-family: var(--mono); font-size: 12.5px; color: var(--muted); }
 
