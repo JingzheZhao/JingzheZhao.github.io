@@ -74,7 +74,6 @@ export const caseStudies = {
       ['Code on GitHub', 'https://github.com/JingzheZhao/InstantSim'],
       ['Watch the demo', 'https://www.youtube.com/watch?v=3uCVHuaowtU&t=8s'],
     ],
-    image: '/assets/portfolio-img1.png',
     metrics: [
       ['~100 ms', 'from height map to sun-hours map'],
       ['90.8%', 'of pixels within ±1 hour of ground truth'],

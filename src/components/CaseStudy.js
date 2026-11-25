@@ -80,10 +80,6 @@ export default function CaseStudy({ id }) {
         {cs.metrics.map(([v, label]) => <div key={label} className="tile"><b>{v}</b><span>{label}</span></div>)}
       </div>
 
-      {cs.image && (
-        <div className="tile case-image"><img src={`${process.env.PUBLIC_URL}${cs.image}`} alt={`${cs.title} screenshot`} /></div>
-      )}
-
       {cs.sections.map((s) => {
         const Diagram = s.diagram && diagrams[s.diagram];
         return (
