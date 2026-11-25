@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { profile, projects, experience, education, toolbox, practice } from '../data';
 import ProjectVisual from './ProjectVisual';
 
@@ -10,31 +10,41 @@ function Chips({ items }) {
 }
 
 function ProjectCard({ p }) {
-  const Tag = p.url ? 'a' : 'div';
-  const linkProps = p.url ? { href: p.url, ...ext } : {};
-  const dark = p.visual === 'image';
+  const href = p.caseStudy ? `#/case/${p.caseStudy}` : p.url;
+  const Tag = href ? 'a' : 'div';
+  const linkProps = p.caseStudy ? { href } : p.url ? { href, ...ext } : {};
   return (
     <Tag className="tile pc" {...linkProps}>
-      <div className="vis" style={dark ? { background: '#000' } : bg(p.color)}>
+      <div className="vis" style={bg(p.color)}>
         <ProjectVisual project={p} />
       </div>
       <div className="t">
         <div className="top">
           <span className="sticker" style={{ ...bg(p.color), color: p.color === 'b' ? '#fff' : undefined }}>{p.kind}</span>
-          {p.url && <span className="arrow" aria-hidden="true">↗</span>}
+          {p.caseStudy && <span className="case-cta">How I built it <span className="arrow" aria-hidden="true">→</span></span>}
+          {!p.caseStudy && p.url && <span className="arrow" aria-hidden="true">↗</span>}
+          {p.private && <span className="private">🔒 private</span>}
         </div>
         <h3>{p.title}</h3>
         <span className="hl">{p.highlight}</span>
         <p>{p.text}</p>
         <Chips items={p.tags} />
+        {p.private && <span className="priv-note">🔒 {p.private}</span>}
       </div>
     </Tag>
   );
 }
 
 export default function Portfolio() {
+  // Coming back from a case study (e.g. #work), jump to that section once the page has rendered.
+  useEffect(() => {
+    const target = document.getElementById(window.location.hash.slice(1));
+    if (target) target.scrollIntoView();
+    else window.scrollTo(0, 0);
+  }, []);
+
   return (
-    <div className="wrap">
+    <div className="wrap" id="top">
       <nav className="topnav">
         <b>jingzhe ✦</b>
         <ul>
@@ -44,7 +54,7 @@ export default function Portfolio() {
           <li><a href="#toolbox">Toolbox</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
-        <a className="btn sm" href={profile.resume} {...ext}>Résumé ↓</a>
+        <a className="btn sm" href="#contact">Get in touch</a>
       </nav>
 
       <header className="bento">
@@ -55,14 +65,16 @@ export default function Portfolio() {
             <p>{profile.intro}</p>
           </div>
           <div className="cta">
-            <a className="btn" href={profile.resume} {...ext}>Download résumé</a>
-            <a className="btn w" href="#work">See projects ↓</a>
+            <a className="btn" href="#work">See projects ↓</a>
+            <a className="btn w" href={`mailto:${profile.email}`}>Email me</a>
           </div>
         </div>
         <div className="tile avatar" aria-hidden="true"><div className="face">JZ</div></div>
         <div className="tile now">
           <span className="mono">● right now</span>
-          <div><b>{profile.now.title}</b><span>{profile.now.text}</span></div>
+          <ul>
+            {profile.now.map((n) => <li key={n.role}><b>{n.role}</b><span>{n.org}</span></li>)}
+          </ul>
         </div>
         <div className="tile edu-t">
           <div className="badge">GT</div>
@@ -147,9 +159,7 @@ export default function Portfolio() {
           <span className="mono">find me</span>
           <div className="links">
             <a href={profile.github} {...ext}>GitHub <span>↗</span></a>
-            <a href={profile.linkedin} {...ext}>LinkedIn <span>↗</span></a>
-            <a href={profile.resume} {...ext}>Résumé (PDF) <span>↓</span></a>
-          </div>
+            <a href={profile.linkedin} {...ext}>LinkedIn <span>↗</span></a>          </div>
         </div>
       </section>
       <footer><span>© {new Date().getFullYear()} {profile.name}</span><span>made with care ✦</span></footer>
